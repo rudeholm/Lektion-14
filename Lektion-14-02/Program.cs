@@ -9,7 +9,7 @@ class Djur
 {
     public virtual void GörLjud()
     {
-        System.Console.WriteLine("Djur gör ljud");
+        Console.WriteLine("Djur gör ljud");
     }
 }
 
@@ -17,7 +17,7 @@ class Hund : Djur
 {
     public override void GörLjud()
     {
-        System.Console.WriteLine("Hunden skäller");
+        Console.WriteLine("Hunden skäller");
     }
 }
 
