@@ -5,6 +5,12 @@ skriva ut på en skrivare, ge den ett tydligt ansvar: att hålla rapportdata. F�
 principen om Single Responsibility.
 */
 
+// Använd separata klasser för att hämta och skriva ut data från Rapport.Data
+public class Rapport
+{
+    public List<string> Data { get; set; } = [];
+}
+
 internal class Program
 {
     private static void Main(string[] args)
