@@ -5,16 +5,36 @@ skriva ut på en skrivare, ge den ett tydligt ansvar: att hålla rapportdata. F�
 principen om Single Responsibility.
 */
 
-// Använd separata klasser för att hämta och skriva ut data från Rapport.Data
-public class Rapport
+// Endast databärare
+public class RapportData
 {
-    public List<string> Data { get; set; } = [];
+public string Titel { get; set; }
+public string Innehåll { get; set; }
+}
+
+// Denna tar hand om utskriften
+public class RapportUtskrivare
+{
+    public void SkrivUtTillKonsol(RapportData data)
+    {
+        System.Console.WriteLine($"--- {data.Titel} ---");
+        System.Console.WriteLine(data.Innehåll);
+    }
 }
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        var rapport = new RapportData
+        {
+            Titel = "Månadsrapport",
+            Innehåll = "Nu jäklar går det bra!",
+        };
+
+        var utskrivare = new RapportUtskrivare();
+
+        utskrivare.SkrivUtTillKonsol(rapport);
+
     }
 }
